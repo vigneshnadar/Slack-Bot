@@ -18,6 +18,7 @@
   "homepage": "https://github.com/vigneshnadar/Slack-Bot#readme",
   "dependencies": {
     "@slack/client": "^3.16.0",
-    "express": "^4.16.2"
+    "express": "^4.16.2",
+    "superagent": "^3.8.2"
   }
 }

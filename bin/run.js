@@ -4,8 +4,17 @@ const slackClient = require('../server/slackClient');
 const service = require('../server/service');
 const http = require('http');
 
-const token = 'xoxb-324793832340-g8ymOP51YsLeM3WFkpjWFDog';
+const token = 'xoxb-324793832340-eK5QlNxmgpBvcYJ8uK9Hx0Rv';
+'xoxb-324793832340-M2RjkftAhz6WbauikS51sEqX';
+// xoxb-324793832340-M2RjkftAhz6WbauikS51sEqX
 const slackLogLevel='verbose';
+
+// curl \
+//  -H 'Authorization: Bearer 5IEX7VCRGKUWUOJUDMQ36RNYHZZ6XXGT' \
+//  'https://api.wit.ai/message?v=20180306&q='
+// 5IEX7VCRGKUWUOJUDMQ36RNYHZZ6XXGT
+const witToken = '5IEX7VCRGKUWUOJUDMQ36RNYHZZ6XXGT';
+const witClient = require('../server/witClient')(witToken);
 
 // service has express object and it is passed to createServer method
 // this helps in creating an express server
@@ -15,7 +24,7 @@ const server = http.createServer(service);
 the slack client is an API token for the slack app which has a bot user added to it
 Using this slack client we will be able to chat with the bot
 */
-const rtm = slackClient.init(token,slackLogLevel);
+const rtm = slackClient.init(token,slackLogLevel, witClient);
 
 //after doing this you can see a green icon on iris the slack bot
 rtm.start();
