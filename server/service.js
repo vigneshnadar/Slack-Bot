@@ -10,8 +10,13 @@ service.get('/service/:intent/:port', (req, res, next) => {
     const servicePort = req.params.port;
 
     // if IPV6 double 
+    
     const serviceIp = req.connection.remoteAddress.includes('::')
     ? `[${req.connection.remoteAddress}]` : req.connection.remoteAddress;
+
+    console.log(serviceIp);
+    console.log(serviceIntent);
+    console.log(servicePort);
 
 
     res.json({result: `${serviceIntent} at ${serviceIp}:${servicePort}`});
