@@ -58,20 +58,20 @@ function handleOnMessage(message) {
                 rtm.sendMessage("Sorry I dont understand", message.channel);
             }
 
-            if (!res.intent) {
-                return rtm.sendMessage("Sorry I do not understand. ", message.channel);
-            }
-            else if (res.intent[0].value == 'time' && res.location) {
-                return rtm.sendMessage(`I dont yet know the time in ${res.location[0].value}`, message.channel);
-            } else {
-                console.log(res);
-                return rtm.sendMessage("Sorry I do not understand. ", message.channel);
-            }
+            // if (!res.intent) {
+            //     return rtm.sendMessage("Sorry I do not understand. ", message.channel);
+            // }
+            // else if (res.intent[0].value == 'time' && res.location) {
+            //     return rtm.sendMessage(`I dont yet know the time in ${res.location[0].value}`, message.channel);
+            // } else {
+            //     console.log(res);
+            //     return rtm.sendMessage("Sorry I do not understand. ", message.channel);
+            // }
 
-            rtm.sendMessage('Hello, world!', message.channel, function messageSent() {
-                //optional
-                console.log('message sent');
-            });
+            // rtm.sendMessage('Hello, world!', message.channel, function messageSent() {
+            //     //optional
+            //     console.log('message sent');
+            // });
         });
     }
 
